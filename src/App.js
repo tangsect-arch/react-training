@@ -1,14 +1,8 @@
 import "./App.css";
-import LeftComponent from "./Component/LeftComponent";
-import RightComponent from "./Component/RghtComponent";
+import MovieList from "./Components/MovieList";
 
 function App() {
-  return (
-    <div className="container">
-      <LeftComponent />
-      <RightComponent />
-    </div>
-  );
+  return <MovieList />;
 }
 
 export default App;

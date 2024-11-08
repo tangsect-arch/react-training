@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%;
+    max-width: 95%;
+    padding: 2.25rem;
+}
+
+.movie-container {
+    width: 23%; 
+    background-color: lightgray;
+    padding: 5px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.movie-container img{
+    width: 90%; 
+    background-color: lightgray;
+    padding: 0.25rem;
+    text-align: center;
+    margin: 5px 0;
+}
+
