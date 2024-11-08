@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+.selected {
+  background-color: #f0f0f0; /* Light gray background */
+  border: 2px solid #007bff;  /* Blue border */
+  font-weight: bold;          /* Make the text bold */
+}
+
 .todo-item:hover {
   background-color: #f0f0f0;
 }
