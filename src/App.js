@@ -1,13 +1,11 @@
 import "./App.css";
-import { ComponentA } from "./component/ComponentA";
-import { ComponentB } from "./component/ComponentB";
+import { Component } from "./component/Component";
 
 function App() {
   return (
     <>
       <h1>Parent</h1>
-      <ComponentA />
-      <ComponentB />
+      <Component/>
     </>
   );
 }
