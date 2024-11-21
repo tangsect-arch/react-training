@@ -1,7 +1,7 @@
 import { Component } from "react";
 import "./App.css";
-import LeftComponent from "./component/LeftComponent";
-import RightComponent from "./component/RghtComponent";
+import RightComponent from "./components/RghtComponent";
+import LeftComponent from "./components/LeftComponent";
 
 class App extends Component {
   render() {

@@ -112,27 +112,31 @@ import { Component } from "react";
 // ];
 
 export default class RightComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      random_tasks: [],
+    };
+  }
+
+  componentDidMount() {
+    const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
+    const task_list = generateRandomArray(random);
+    this.setState({ random_tasks: task_list });
+  }
+
   render() {
-    function random_tasks() {
-      const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
-      // const task_list = tasks[random];
-      const task_list = generateRandomArray(random);
-
-      console.log(task_list);
-
-      return task_list.map((item, index) => {
-        return (
-          <div key={index} className="task-item">
-            {item}
-          </div>
-        );
-      });
-    }
-
     return (
       <div className="right-container">
         <h2>To Do</h2>
-        <div>{random_tasks()}</div>
+        <div>
+          {this.state.random_tasks.map((item, index) => (
+            <div key={index} className="task-item">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
