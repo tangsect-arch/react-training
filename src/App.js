@@ -1,14 +1,17 @@
+import { Component } from "react";
 import "./App.css";
-import LeftComponent from "./Component/LeftComponent";
-import RightComponent from "./Component/RghtComponent";
+import LeftComponent from "./component/LeftComponent";
+import RightComponent from "./component/RghtComponent";
 
-function App() {
-  return (
-    <div className="container">
-      <LeftComponent />
-      <RightComponent />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <LeftComponent />
+        <RightComponent />
+      </div>
+    );
+  }
 }
 
 export default App;

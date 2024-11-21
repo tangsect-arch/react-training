@@ -1,6 +1,7 @@
 import "./RightComponent.css";
 
-import { generateRandomArray } from "../Helpers/utils";
+import { generateRandomArray } from "../helpers/utils";
+import { Component } from "react";
 
 // const tasks = [
 //   [
@@ -110,27 +111,29 @@ import { generateRandomArray } from "../Helpers/utils";
 //   ],
 // ];
 
-export default function RightComponent() {
-  function random_tasks() {
-    const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
-    // const task_list = tasks[random];
-    const task_list = generateRandomArray(random);
+export default class RightComponent extends Component {
+  render() {
+    function random_tasks() {
+      const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
+      // const task_list = tasks[random];
+      const task_list = generateRandomArray(random);
 
-    console.log(task_list);
+      console.log(task_list);
 
-    return task_list.map((item, index) => {
-      return (
-        <div key={index} className="task-item">
-          {item}
-        </div>
-      );
-    });
+      return task_list.map((item, index) => {
+        return (
+          <div key={index} className="task-item">
+            {item}
+          </div>
+        );
+      });
+    }
+
+    return (
+      <div className="right-container">
+        <h2>To Do</h2>
+        <div>{random_tasks()}</div>
+      </div>
+    );
   }
-
-  return (
-    <div className="right-container">
-      <h2>To Do</h2>
-      <div>{random_tasks()}</div>
-    </div>
-  );
 }
