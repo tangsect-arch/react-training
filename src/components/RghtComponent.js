@@ -126,6 +126,14 @@ export default class RightComponent extends Component {
     this.setState({ random_tasks: task_list });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.selected !== this.props.selected) {
+      const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
+      const task_list = generateRandomArray(random);
+      this.setState({ random_tasks: task_list });
+    }
+  }
+
   render() {
     return (
       <div className="right-container">
