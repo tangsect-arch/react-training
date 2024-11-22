@@ -1,6 +1,6 @@
 import "./RightComponent.css";
 
-import { generateRandomArray } from "../Helpers/utils";
+import { generateRandomArray } from "../helpers/utils";
 
 // const tasks = [
 //   [
@@ -113,7 +113,6 @@ import { generateRandomArray } from "../Helpers/utils";
 export default function RightComponent() {
   function random_tasks() {
     const random = Math.floor(Math.random() * (6 - 3 + 1)) + 3;
-    // const task_list = tasks[random];
     const task_list = generateRandomArray(random);
 
     console.log(task_list);

@@ -10,15 +10,14 @@ const title = [
   "Entertainment",
 ];
 
-export default function LeftComponent() {
+export default function LeftComponent({ setSelected, selected }) {
   function toDo() {
-    // const title = generateRandomArray(5);
-    const random = Math.floor(Math.random() * title.length);
     return title.map((item, index) => {
       return (
         <div
           key={index}
-          className={`todo-item ${index === random ? "selected" : ""}`}
+          className={`todo-item ${index === selected ? "selected" : ""}`}
+          onClick={() => setSelected(index)}
         >
           {item}
         </div>
