@@ -1,7 +1,16 @@
 import "./App.css";
+import { ComponentA } from "./component/ComponentA";
 
 function App() {
-  return <div className="container">Hello World</div>;
+  return (
+    <>
+      <div>
+        <h2>Hello world</h2>
+
+        <ComponentA />
+      </div>
+    </>
+  );
 }
 
 export default App;
