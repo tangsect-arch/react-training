@@ -74,7 +74,11 @@ class App extends Component {
     });
   };
 
-  handleStorageChange = () => {};
+  handleStorageChange = (event) => {
+    this.setState({ useLocalStorage: JSON.parse(event.target.value) }, () => {
+      this.componentDidMount();
+    });
+  };
 
   handleItemChange = (selected) => {
     this.setState({ selected });

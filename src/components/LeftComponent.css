@@ -20,6 +20,21 @@
   text-align: center;
 }
 
+.storage-dropdown select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ddd;
+  background-color: white;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.storage-dropdown select:focus {
+  border-color: #007bff;
+}
+
 .todo-item {
   display: flex;
   justify-content: space-between;

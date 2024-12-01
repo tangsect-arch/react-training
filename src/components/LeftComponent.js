@@ -77,9 +77,9 @@ export default class LeftComponent extends Component {
         <h2>Todo List</h2>
         <div className="todo-button">
           <div className="storage-dropdown">
-            <select onChange={handleStorageChange} value={selectedStorage}>
-              <option value="sessionStorage">Session Storage</option>
-              <option value="localStorage">Local Storage</option>
+            <select onChange={handleStorageChange}>
+              <option value="false">Session Storage</option>
+              <option value="true">Local Storage</option>
             </select>
           </div>
           <button
