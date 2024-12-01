@@ -40,7 +40,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   max-width: 95%;
   padding: 2.25rem;
 }

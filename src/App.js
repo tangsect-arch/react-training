@@ -90,6 +90,16 @@ class App extends Component {
     this.setState({ selected });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.todos !== this.state.todos) {
+      this.saveTodos();
+    }
+  }
+
+  componentWillUnmount() {
+    this.saveTodos();
+  }
+
   render() {
     return (
       <div className="container">
