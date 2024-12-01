@@ -70,12 +70,18 @@ export default class LeftComponent extends Component {
   };
 
   render() {
-    const { selected, todos } = this.props;
+    const { selected, todos, handleStorageChange } = this.props;
     const { modalVisible, newTitle, newEntries, currentTodo } = this.state;
     return (
       <div className="left-container">
         <h2>Todo List</h2>
         <div className="todo-button">
+          <div className="storage-dropdown">
+            <select onChange={handleStorageChange} value={selectedStorage}>
+              <option value="sessionStorage">Session Storage</option>
+              <option value="localStorage">Local Storage</option>
+            </select>
+          </div>
           <button
             key={`add-button`}
             onClick={() => {

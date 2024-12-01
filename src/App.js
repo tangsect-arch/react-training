@@ -8,78 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       selected: 0,
-      todos: [
-        {
-          id: 1,
-          title: "Work",
-          entries: [
-            "Complete project report",
-            "Attend team meeting",
-            "Reply to client emails",
-            "Finish documentation",
-          ],
-        },
-        {
-          id: 2,
-          title: "Personal",
-          entries: [
-            "Call family",
-            "Buy groceries",
-            "Clean the house",
-            "Schedule doctor's appointment",
-          ],
-        },
-        {
-          id: 3,
-          title: "Fitness",
-          entries: [
-            "Morning run",
-            "Yoga session",
-            "Gym workout",
-            "Track calories",
-          ],
-        },
-        {
-          id: 4,
-          title: "Shopping",
-          entries: [
-            "Buy new shoes",
-            "Pick up groceries",
-            "Order phone accessories",
-            "Buy a gift for a friend",
-          ],
-        },
-        {
-          id: 5,
-          title: "Study",
-          entries: [
-            "Read chapter 5",
-            "Complete assignment",
-            "Review notes",
-            "Prepare for exam",
-          ],
-        },
-        {
-          id: 6,
-          title: "Chores",
-          entries: [
-            "Wash dishes",
-            "Take out trash",
-            "Vacuum the floor",
-            "Laundry",
-          ],
-        },
-        {
-          id: 7,
-          title: "Entertainment",
-          entries: [
-            "Watch a movie",
-            "Play video games",
-            "Read a book",
-            "Attend a concert",
-          ],
-        },
-      ],
+      todos: [],
       useLocalStorage: false,
     };
   }
@@ -91,6 +20,7 @@ class App extends Component {
         this.state.useLocalStorage ? "localStorage" : "sessionStorage"
       ].getItem(storageKey)
     );
+
     if (savedTodos) {
       this.setState({ todos: savedTodos });
     }
@@ -144,6 +74,8 @@ class App extends Component {
     });
   };
 
+  handleStorageChange = () => {};
+
   handleItemChange = (selected) => {
     this.setState({ selected });
   };
@@ -158,6 +90,7 @@ class App extends Component {
           handleAddTodo={this.handleAddTodo}
           handleEditTodo={this.handleEditTodo}
           handleDeleteTodo={this.handleDeleteTodo}
+          handleStorageChange={this.handleStorageChange}
         />
         <RightComponent
           selected={this.state.selected}
