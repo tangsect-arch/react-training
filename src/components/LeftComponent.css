@@ -1,10 +1,16 @@
 .left-container {
   margin-right: 1rem;
-  width: 25%;
+  width: 30%;
   padding: 1.25rem;
   background-color: #ffffff;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.todo-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
 }
 
 .left-container h2 {
@@ -15,20 +21,43 @@
 }
 
 .todo-item {
-  padding: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem 0 0px 0.625rem;
   background-color: #ffffff;
   border-radius: 0.25rem;
   margin-bottom: 0.625rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  align-items: baseline;
+}
+
+.todo-title{
   cursor: pointer;
 }
 
 .selected {
-  background-color: #f0f0f0; /* Light gray background */
-  border: 2px solid #007bff;  /* Blue border */
-  font-weight: bold;          /* Make the text bold */
+  background-color: #f0f0f0;
+  border: 0.125rem solid #007bff;
+  .todo-title{
+    font-weight: bold;
+  }
 }
 
 .todo-item:hover {
   background-color: #f0f0f0;
 }
+
+
+.edit-label{
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+}
+
+.delete-label{
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+}
+
