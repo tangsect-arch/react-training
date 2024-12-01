@@ -10,7 +10,6 @@ class App extends Component {
       selected: 0,
       todos: [],
       useLocalStorage: false,
-      // isChecked: false,
     };
   }
 
@@ -73,10 +72,9 @@ class App extends Component {
   toggleStorage = (params) => {
     this.setState(
       {
-        useLocalStorage: params,
+        useLocalStorage: params.target.checked,
       },
       () => {
-        console.log("State updated:", this.state.useLocalStorage);
         this.componentDidMount();
       }
     );
