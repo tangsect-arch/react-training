@@ -11,8 +11,15 @@ export default class LeftComponent extends Component {
       newTitle: "",
       newEntries: "",
       isAdd: false,
+      isChecked: false,
     };
   }
+
+  handleCheckboxChange = (event) => {
+    alert(event.target.checked);
+    this.setState({ isChecked: event.target.checked });
+    this.props.toggleStorage(event.target.checked);
+  };
 
   openModal = (todo) => {
     this.setState({
@@ -70,14 +77,14 @@ export default class LeftComponent extends Component {
   };
 
   render() {
-    const { selected, todos, handleStorageChange } = this.props;
+    const { selected, todos, handleStorageChange, localStorage } = this.props;
     const { modalVisible, newTitle, newEntries, currentTodo } = this.state;
     return (
       <div className="left-container">
         <h2>Todo List</h2>
         <div className="todo-button">
           <div className="storage-dropdown">
-            <select onChange={handleStorageChange}>
+            <select onChange={handleStorageChange} selected={localStorage}>
               <option value="false">Session Storage</option>
               <option value="true">Local Storage</option>
             </select>
@@ -136,6 +143,8 @@ export default class LeftComponent extends Component {
             handleClose={this.closeModal}
             handleAddEntry={this.handleAddEntry}
             handleDeleteEntry={this.handleDeleteEntry}
+            handleCheckboxChange={this.handleCheckboxChange}
+            isChecked={this.state.isChecked}
           />
         )}
       </div>

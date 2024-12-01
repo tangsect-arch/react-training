@@ -2,7 +2,6 @@ import React from "react";
 import "./Modal.css";
 
 const Modal = ({
-  currentTodo,
   newTitle,
   newEntries,
   isAdd,
@@ -12,8 +11,11 @@ const Modal = ({
   handleClose,
   handleAddEntry,
   handleDeleteEntry,
+  handleCheckboxChange,
+  isChecked,
 }) => {
   const modalTitle = isAdd ? "Add Todo" : "Edit Todo";
+  console.log(isChecked);
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -49,6 +51,16 @@ const Modal = ({
               );
             })}
           </div>
+        </div>
+        <div className="checkbox-container">
+          <input
+            className="storage-check-box"
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+            id="todo-checkbox"
+          />
+          <label htmlFor="todo-checkbox">Local Storage</label>
         </div>
         <div className="buttons-container">
           <div className="add-entry" onClick={handleAddEntry}>

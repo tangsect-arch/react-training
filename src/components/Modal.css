@@ -93,7 +93,7 @@ button.cancel:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  
 }
 
 .save-cancel-buttons {
@@ -103,4 +103,24 @@ button.cancel:hover {
 
 .save-cancel-buttons button {
   margin-left: 0.5rem;
+}
+
+.storage-check-box{
+  max-width: 1rem;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 0.5rem;
+}
+
+.checkbox-container label {
+  font-size: 1rem;
+  color: #333;
+  padding-bottom: 0.8rem;
 }

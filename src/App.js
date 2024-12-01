@@ -10,10 +10,12 @@ class App extends Component {
       selected: 0,
       todos: [],
       useLocalStorage: false,
+      // isChecked: false,
     };
   }
 
   componentDidMount() {
+    console.log(this.state.useLocalStorage);
     const storageKey = this.state.useLocalStorage ? "todos" : "todos_session";
     const savedTodos = JSON.parse(
       window[
@@ -68,10 +70,16 @@ class App extends Component {
     });
   };
 
-  toggleStorage = (event) => {
-    this.setState({ useLocalStorage: event.target.checked }, () => {
-      this.componentDidMount();
-    });
+  toggleStorage = (params) => {
+    this.setState(
+      {
+        useLocalStorage: params,
+      },
+      () => {
+        console.log("State updated:", this.state.useLocalStorage);
+        this.componentDidMount();
+      }
+    );
   };
 
   handleStorageChange = (event) => {
@@ -95,6 +103,8 @@ class App extends Component {
           handleEditTodo={this.handleEditTodo}
           handleDeleteTodo={this.handleDeleteTodo}
           handleStorageChange={this.handleStorageChange}
+          toggleStorage={this.toggleStorage}
+          localStorage={this.state.useLocalStorage}
         />
         <RightComponent
           selected={this.state.selected}
